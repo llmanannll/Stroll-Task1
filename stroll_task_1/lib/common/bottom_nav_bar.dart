@@ -28,7 +28,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             .entries
             .map((entry) => BottomNavigationBarItem(
                   icon: Padding(
-                    padding: const EdgeInsets.only(top: 4.0),
+                    padding: const EdgeInsets.only(top: 2.0),
                     child: Stack(
                       children: [
                         Image.asset(
