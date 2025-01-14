@@ -11,11 +11,12 @@ class NotificationBadge extends StatelessWidget {
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.red,
+        color: const Color.fromARGB(255, 139, 136, 239),
       ),
       child: Text(
         '$count',
-        style: TextStyle(color: Colors.white, fontSize: 10),
+        style:
+            TextStyle(color: const Color.fromARGB(255, 0, 0, 0), fontSize: 10),
       ),
     );
   }

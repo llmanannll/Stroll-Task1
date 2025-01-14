@@ -11,12 +11,12 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   final List<String> icons = [
-    "assets/button1.jpg",
-    'assets/button1.jpg',
-    'assets/button1.jpg',
-    'assets/button1.jpg',
+    "assets/button1.png",
+    'assets/button5.png',
+    'assets/button6.png',
+    'assets/button4.png',
   ];
-  final List<int> badgeCounts = [0, 0, 3, 0]; // Default to 0 for no badge
+  final List<int> badgeCounts = [0, 0, 10, 0]; // Default to 0 for no badge
 
   @override
   Widget build(BuildContext context) {
@@ -27,28 +27,32 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             .asMap()
             .entries
             .map((entry) => BottomNavigationBarItem(
-                  icon: Stack(
-                    children: [
-                      Image.asset(
-                        icons[entry.key],
-                        height: 44,
-                        width: 44,
-                        fit: BoxFit.cover,
-                      ),
-                      if (badgeCounts[entry.key] > 0)
-                        Positioned(
-                          right: 0,
-                          top: 0,
-                          child: NotificationBadge(badgeCounts[entry.key]),
+                  icon: Padding(
+                    padding: const EdgeInsets.only(top: 4.0),
+                    child: Stack(
+                      children: [
+                        Image.asset(
+                          color: const Color.fromARGB(255, 111, 110, 124),
+                          icons[entry.key],
+                          height: 44,
+                          width: 44,
+                          fit: BoxFit.cover,
                         ),
-                    ],
+                        if (badgeCounts[entry.key] > 0)
+                          Positioned(
+                            right: 0,
+                            top: 0,
+                            child: NotificationBadge(badgeCounts[entry.key]),
+                          ),
+                      ],
+                    ),
                   ),
                   label: '',
                 ))
             .toList(),
-        backgroundColor: Colors.grey[850],
-        selectedItemColor: Colors.white70,
-        unselectedItemColor: Colors.white30,
+        backgroundColor: const Color.fromARGB(255, 29, 32, 38),
+        selectedItemColor: const Color.fromARGB(255, 111, 110, 124),
+        unselectedItemColor: const Color.fromARGB(255, 111, 110, 124),
         iconSize: 35,
         selectedLabelStyle: TextStyle(color: Colors.transparent),
         unselectedLabelStyle: TextStyle(color: Colors.transparent),
